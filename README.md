@@ -1,8 +1,9 @@
 # coreos-kubecluster
 
+How to run kubernetes on core-os instances on AWS.
+
 Based on: 
     https://coreos.com/kubernetes/docs/latest/kubernetes-on-aws.html
-
 
 steps:
  * find your keypair. 
@@ -21,6 +22,8 @@ steps:
  * kube-aws validate
  * kube-aws up
  * kube-aws status -- get controller IP
+ * setup DNS to match kubecfg file or edit /etc/hosts
+ * kubectl --kubeconfig=kubeconfig get nodes
 
 
 shutting down:
