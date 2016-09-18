@@ -20,9 +20,24 @@ steps:
  * kube-aws render
  * kube-aws validate
  * kube-aws up
+ * kube-aws status -- get controller IP
 
-nb - special steps must be taken when setting up certs for production deployments
 
-todo
-- how do the nodes scale?
-- how do you "properly" create all the certs?
+shutting down:
+* kube-aws destroy
+
+backing up the cloudformation stack:
+* kube-aws up --export
+
+nb:
+* if you don't want to register the dns name kube.jeliskubezone.com for example, add kube.jeliskubezone.com to /etc/hosts and point it to the controller
+ip. You can get the controller ip with kube-aws status
+* special steps must be taken when setting up certs for production deployments
+* a kubernetes config file is written to kubeconfig. It can be used to interact with the cluster like so: kubectl --kubeconfig=kubeconfig get nodes
+
+todo: 
+* how do the nodes scale?
+* how do you "properly" create all the certs?
+
+core-os: 
+* login w/ coreos
