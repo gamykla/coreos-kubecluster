@@ -1,7 +1,7 @@
 # coreos-kubecluster
 
-https://coreos.com/kubernetes/docs/latest/kubernetes-on-aws.html
-
+Based on: 
+    https://coreos.com/kubernetes/docs/latest/kubernetes-on-aws.html
 
 
 steps:
@@ -23,3 +23,6 @@ steps:
 
 nb - special steps must be taken when setting up certs for production deployments
 
+todo
+- how do the nodes scale?
+- how do you "properly" create all the certs?
