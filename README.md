@@ -94,6 +94,7 @@ Todo
 * why the f doesn't multi AZ deployment work?
 * would this work with nano instnaces?
 * how does this scale? How are new worker nodes added?
+* how does kube know to create an externally facing ELB when creating a service?
 
 References
 ------------
