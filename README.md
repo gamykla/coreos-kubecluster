@@ -54,7 +54,8 @@ add more pod instances:
 
 upgrade to a new version of the nginx image:
 * kubectl --kubeconfig=kubeconfig set image deployment/nginx nginx=nginx:1.11-alpine
- * notice the old pods being taken down and new ones being brought up: kubectl --kubeconfig=kubeconfig get pods
+ * notice the old pods being taken down and new ones being brought up: 
+  * kubectl --kubeconfig=kubeconfig get pods
 * go back to the latest version
  * kubectl --kubeconfig=kubeconfig set image deployment/nginx nginx=nginx:latest
 
