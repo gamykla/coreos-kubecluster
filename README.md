@@ -5,7 +5,13 @@ How to run kubernetes on core-os instances on AWS.
 Based on: 
     https://coreos.com/kubernetes/docs/latest/kubernetes-on-aws.html
 
-steps:
+preliminary steps:
+* install kubernetes
+ * add kubectl to your PATH
+* install kube-aws 
+ * add kube-aws to your PATH
+
+setup steps:
  * find your keypair. 
  * create KMS keys. get arn
  * kube-aws init \
