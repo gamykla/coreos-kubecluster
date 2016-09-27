@@ -26,9 +26,25 @@ kube cluster setup steps
 * kube-aws validate
 * kube-aws up
  * make sure that your VPC has an internet gateway attached to it
+ 
+Once you're running
+-------------------
 * kube-aws status -- get controller IP
-* setup DNS to match kubecfg file or edit /etc/hosts
 * kubectl --kubeconfig=kubeconfig get nodes
+
+useful kube commands
+* kubectl --kubeconfig=kubeconfig get pods
+* kubectl --kubeconfig=kubeconfig get nodes
+* kubectl --kubeconfig=kubeconfig get deployments
+* kubectl --kubeconfig=kubeconfig logs <POD-NAME>
+* kubectl --kubeconfig=kubeconfig cluster-info
+* kubectl --kubeconfig=kubeconfig get events
+
+try running nginx:
+* kubectl --kubeconfig=kubeconfig run nginx --image=nginx --port=80
+* kubectl --kubeconfig=kubeconfig expose deployment nginx --type="LoadBalancer"
+* kubectl --kubeconfig=kubeconfig get services nginx
+ * you'll want to get the hostname for the load balancer that was created from the aws console
 
 
 Other tasks
