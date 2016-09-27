@@ -1,20 +1,20 @@
 # Unique name of Kubernetes cluster. In order to deploy
 # more than one cluster into the same AWS account, this
 # name must not conflict with an existing cluster.
-clusterName: justin-kube
+clusterName: gamykla-kube
 
 # DNS name routable to the Kubernetes controller nodes
 # from worker nodes and external clients. Configure the options
 # below if you'd like kube-aws to create a Route53 record sets/hosted zones
 # for you.  Otherwise the deployer is responsible for making this name routable
-externalDNSName: kube.jeliskubezone.com
+externalDNSName: kube.gamykla.com
 
 # CoreOS release channel to use. Currently supported options: alpha, beta, stable
 # See coreos.com/releases for more information
 releaseChannel: stable
 
 # Set to true if you want kube-aws to create a Route53 A Record for you.
-createRecordSet: false
+createRecordSet: true
 
 # TTL in seconds for the Route53 RecordSet created if createRecordSet is set to true.
 recordSetTTL: 300
@@ -27,7 +27,7 @@ recordSetTTL: 300
 
 # The ID of hosted zone to add the externalDNSName to.
 # Either specify hostedZoneId or hostedZone, but not both
-hostedZoneId: "Z18NHDYZ60OE0D"
+hostedZoneId: "Z2K658UULTVVY4"
 
 # Name of the SSH keypair already loaded into the AWS
 # account being used to deploy this cluster.
@@ -55,13 +55,13 @@ controllerRootVolumeType: gp2
 #controllerRootVolumeIOPS: 0
 
 # Number of worker nodes to create
-workerCount: 1
+workerCount: 2
 
 # Instance type for worker nodes
 workerInstanceType: t2.micro
 
 # Disk size (GiB) for worker nodes
-workerRootVolumeSize: 30
+workerRootVolumeSize: 10
 
 # Disk type for worker node (one of standard, io1, or gp2)
 workerRootVolumeType: gp2
@@ -73,35 +73,35 @@ workerRootVolumeType: gp2
 # workerSpotPrice: "0.05"
 
 # ID of existing VPC to create subnet in. Leave blank to create a new VPC
-# vpcId:
+#vpcId: "vpc-54c1ed33"
 
 # ID of existing route table in existing VPC to attach subnet to. Leave blank to use the VPC's main route table.
 # routeTableId:
 
 # CIDR for Kubernetes VPC. If vpcId is specified, must match the CIDR of existing vpc.
-vpcCIDR: "10.0.0.0/16"
+#vpcCIDR: "10.0.0.0/16"
 
 # CIDR for Kubernetes subnet when placing nodes in a single availability zone (not highly-available) Leave commented out for multi availability zone setting and use the below `subnets` section instead.
 # instanceCIDR: "10.0.0.0/24"
 
 # Kubernetes subnets with their CIDRs and availability zones. Differentiating availability zone for 2 or more subnets result in high-availability (failures of a single availability zone won't result in immediate downtimes)
-# subnets:
-#   - availabilityZone: us-west-1a
+#subnets:
+#   - availabilityZone: us-east-1a
 #     instanceCIDR: "10.0.0.0/24"
-#   - availabilityZone: us-west-1b
+#   - availabilityZone: us-east-1b
 #     instanceCIDR: "10.0.1.0/24"
 
 # IP Address for the controller in Kubernetes subnet. When we have 2 or more subnets, the controller is placed in the first subnet and controllerIP must be included in the instanceCIDR of the first subnet. This convention will change once we have H/A controllers
-# controllerIP: 10.0.0.50
+#controllerIP: 10.0.0.50
 
 # CIDR for all service IP addresses
-# serviceCIDR: "10.3.0.0/24"
+#serviceCIDR: "10.3.0.0/24"
 
 # CIDR for all pod IP addresses
-# podCIDR: "10.2.0.0/16"
+#podCIDR: "10.2.0.0/16"
 
 # IP address of Kubernetes dns service (must be contained by serviceCIDR)
-# dnsServiceIP: 10.3.0.10
+#dnsServiceIP: 10.3.0.10
 
 # Version of hyperkube image to use. This is the tag for the hyperkube image repository.
 # kubernetesVersion: v1.3.4_coreos.0
