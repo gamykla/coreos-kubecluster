@@ -5,16 +5,18 @@ How to run kubernetes on core-os instances on AWS.
 Based on: 
     https://coreos.com/kubernetes/docs/latest/kubernetes-on-aws.html
 
-preliminary steps:
+preliminary steps
+------------------
 * install kubernetes
  * add kubectl to your PATH
 * install kube-aws 
  * add kube-aws to your PATH
 
-kube cluster setup steps:
- * find your keypair. 
- * create KMS keys. get arn
- * kube-aws init \
+kube cluster setup steps
+--------------------------
+* find your keypair. 
+* create KMS keys. get arn
+* kube-aws init \
  --cluster-name=my-cluster-name \
  --external-dns-name=my-cluster-endpoint \
  --region=us-west-1 \
@@ -22,15 +24,15 @@ kube cluster setup steps:
  --key-name=key-pair-name \
  --kms-key-arn="arn:aws:kms:us-west-1:xxxxxxxxxx:key/xxxxxxxxxxxxxxxxxxx"
  
- * edit cluster.yaml
- * if credentials or user data exist, delete them
- * kube-aws render
- * kube-aws validate
- * kube-aws up
-  * make sure that your VPC has an internet gateway attached to it
- * kube-aws status -- get controller IP
- * setup DNS to match kubecfg file or edit /etc/hosts
- * kubectl --kubeconfig=kubeconfig get nodes
+* edit cluster.yaml
+* if credentials or user data exist, delete them
+* kube-aws render
+* kube-aws validate
+* kube-aws up
+ * make sure that your VPC has an internet gateway attached to it
+* kube-aws status -- get controller IP
+* setup DNS to match kubecfg file or edit /etc/hosts
+* kubectl --kubeconfig=kubeconfig get nodes
 
 
 shutting down:
