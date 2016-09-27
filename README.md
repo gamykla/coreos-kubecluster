@@ -21,6 +21,7 @@ steps:
  * kube-aws render
  * kube-aws validate
  * kube-aws up
+  * make sure that your VPC has an internet gateway attached to it
  * kube-aws status -- get controller IP
  * setup DNS to match kubecfg file or edit /etc/hosts
  * kubectl --kubeconfig=kubeconfig get nodes
