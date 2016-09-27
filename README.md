@@ -43,6 +43,7 @@ useful kube commands
 * kubectl --kubeconfig=kubeconfig cluster-info
 * kubectl --kubeconfig=kubeconfig get events
 * kubectl --kubeconfig=kubeconfig get services
+* kubectl --kubeconfig=kubeconfig delete pods --all
 
 try running nginx:
 * kubectl --kubeconfig=kubeconfig run nginx --image=nginx --port=80
