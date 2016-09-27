@@ -24,7 +24,7 @@ kube-aws init \
  --kms-key-arn="arn:aws:kms:us-west-1:xxxxxxxxxx:key/xxxxxxxxxxxxxxxxxxx"
 ```
 * edit cluster.yaml
-* if credentials or user data exist, delete them
+* if dirs credentials or userdata exist, delete them
 * kube-aws render
 * kube-aws validate
 * kube-aws up
