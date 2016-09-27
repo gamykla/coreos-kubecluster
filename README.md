@@ -91,6 +91,7 @@ ip. You can get the controller ip with kube-aws status
 Todo
 -----
 * what's the proper way of generating ssl certs for the cluster? 
+* why do all hosts have public iP??
 * what's the best practice for protecting services with TLS
 * would this work with nano instnaces?
 * how does this scale? How are new worker nodes added?
