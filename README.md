@@ -43,7 +43,10 @@ Other tasks
 
 notes
 ------
-* AMI's are core-os instnaces. login with user 'coreos'
+* AMI's are core-os instnaces. 
+```
+login with user 'core' ssh -i MyKey.pem core@Ip
+```
 * worker nodes scale with ec2 auto scaling rules? (review cloudformation)
 * if you don't want to register the dns name kube.jeliskubezone.com for example, add kube.jeliskubezone.com to /etc/hosts and point it to the controller
 ip. You can get the controller ip with kube-aws status
