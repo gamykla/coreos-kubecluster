@@ -2,9 +2,6 @@
 
 How to run kubernetes on core-os instances on AWS.
 
-Based on: 
-    https://coreos.com/kubernetes/docs/latest/kubernetes-on-aws.html
-
 preliminary steps
 ------------------
 * install kubernetes
@@ -58,3 +55,8 @@ Todo
 * what's the proper way of generating ssl certs for the cluster? 
 * why the f doesn't multi AZ deployment work?
 * would this work with nano instnaces?
+
+References
+------------
+* https://coreos.com/kubernetes/docs/latest/kubernetes-on-aws.html
+* http://kubernetes.io/docs/hellonode/ 
