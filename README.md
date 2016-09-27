@@ -75,5 +75,7 @@ Todo
 
 References
 ------------
+* kube-aws - https://github.com/coreos/coreos-kubernetes/releases 
+* kubernetes & kubectl - https://github.com/kubernetes/kubernetes/releases 
 * https://coreos.com/kubernetes/docs/latest/kubernetes-on-aws.html
 * http://kubernetes.io/docs/hellonode/ 
