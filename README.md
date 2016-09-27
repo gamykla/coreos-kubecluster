@@ -42,6 +42,7 @@ useful kube commands
 * kubectl --kubeconfig=kubeconfig logs <POD-NAME>
 * kubectl --kubeconfig=kubeconfig cluster-info
 * kubectl --kubeconfig=kubeconfig get events
+* kubectl --kubeconfig=kubeconfig get services
 
 try running nginx:
 * kubectl --kubeconfig=kubeconfig run nginx --image=nginx --port=80
@@ -59,6 +60,13 @@ upgrade to a new version of the nginx image:
 * go back to the latest version
  * kubectl --kubeconfig=kubeconfig set image deployment/nginx nginx=nginx:latest
 
+cleanup: tearing down your pods + services
+* delete the deployment (deletes pods) + delete service (deletes lb)
+ * kubectl --kubeconfig=kubeconfig kubectl delete service,deployment nginx
+* verify pods are gone
+ * kubectl --kubeconfig=kubeconfig get pods
+* verify services are gone
+ * kubectl --kubeconfig=kubeconfig get services
 
 Other tasks
 --------------
