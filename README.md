@@ -49,6 +49,9 @@ try running nginx:
 * kubectl --kubeconfig=kubeconfig get services nginx
  * you'll want to get the hostname for the load balancer that was created from the aws console
 
+add more pod instances:
+* kubectl --kubeconfig=kubeconfig scale deployment nginx --replicas=4
+
 
 Other tasks
 --------------
