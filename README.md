@@ -52,6 +52,11 @@ try running nginx:
 add more pod instances:
 * kubectl --kubeconfig=kubeconfig scale deployment nginx --replicas=4
 
+upgrade to a new version of the nginx image:
+* kubectl --kubeconfig=kubeconfig set image deployment/nginx nginx=nginx:1.11-alpine
+ * notice the old pods being taken down and new ones being brought up: kubectl --kubeconfig=kubeconfig get pods
+kubectl --kubeconfig=kubeconfig set image deployment/nginx nginx=nginx:latest
+ * go back to the latest version
 
 Other tasks
 --------------
