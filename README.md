@@ -11,7 +11,7 @@ preliminary steps:
 * install kube-aws 
  * add kube-aws to your PATH
 
-setup steps:
+kube cluster setup steps:
  * find your keypair. 
  * create KMS keys. get arn
  * kube-aws init \
