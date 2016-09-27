@@ -71,6 +71,7 @@ Todo
 * what's the proper way of generating ssl certs for the cluster? 
 * why the f doesn't multi AZ deployment work?
 * would this work with nano instnaces?
+* how does this scale? How are new worker nodes added?
 
 References
 ------------
