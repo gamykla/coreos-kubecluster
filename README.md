@@ -23,7 +23,6 @@ kube cluster setup steps
  --availability-zone=us-west-1c \
  --key-name=key-pair-name \
  --kms-key-arn="arn:aws:kms:us-west-1:xxxxxxxxxx:key/xxxxxxxxxxxxxxxxxxx"
- 
 * edit cluster.yaml
 * if credentials or user data exist, delete them
 * kube-aws render
