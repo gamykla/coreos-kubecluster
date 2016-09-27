@@ -11,15 +11,17 @@ preliminary steps
 
 kube cluster setup steps
 --------------------------
-* find your keypair. 
+* find your aws keypair or create one. this will be used to log in to core-os instances. 
 * create KMS keys. get arn
-* kube-aws init \
+* run 
+```kube-aws init \
  --cluster-name=my-cluster-name \
  --external-dns-name=my-cluster-endpoint \
  --region=us-west-1 \
  --availability-zone=us-west-1c \
  --key-name=key-pair-name \
  --kms-key-arn="arn:aws:kms:us-west-1:xxxxxxxxxx:key/xxxxxxxxxxxxxxxxxxx"
+```
 * edit cluster.yaml
 * if credentials or user data exist, delete them
 * kube-aws render
