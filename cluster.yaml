@@ -43,7 +43,7 @@ region: us-east-1
 kmsKeyArn: "arn:aws:kms:us-east-1:221022027401:key/6a52f100-39e7-4374-bae5-0c8387335414"
 
 # Instance type for controller node
-controllerInstanceType: t2.micro
+controllerInstanceType: t2.nano
 
 # Disk size (GiB) for controller node
 controllerRootVolumeSize: 10
@@ -58,7 +58,7 @@ controllerRootVolumeType: gp2
 workerCount: 2
 
 # Instance type for worker nodes
-workerInstanceType: t2.micro
+workerInstanceType: t2.nano
 
 # Disk size (GiB) for worker nodes
 workerRootVolumeSize: 10
