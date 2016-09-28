@@ -24,9 +24,7 @@ kube-aws init \
  --kms-key-arn="arn:aws:kms:us-west-1:xxxxxxxxxx:key/xxxxxxxxxxxxxxxxxxx"
 ```
 * edit cluster.yaml
-* if dirs credentials or userdata exist, delete them
-* kube-aws render
-* kube-aws validate
+* build.sh
 * kube-aws up
  * make sure that your VPC has an internet gateway attached to it
  
