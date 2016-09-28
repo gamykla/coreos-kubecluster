@@ -33,15 +33,23 @@ Once you're running
 * kube-aws status -- get controller IP
 * kubectl --kubeconfig=kubeconfig get nodes
 
-useful kube commands
+kube get commands
 * kubectl --kubeconfig=kubeconfig get pods
 * kubectl --kubeconfig=kubeconfig get nodes
 * kubectl --kubeconfig=kubeconfig get deployments
-* kubectl --kubeconfig=kubeconfig logs <POD-NAME>
-* kubectl --kubeconfig=kubeconfig cluster-info
 * kubectl --kubeconfig=kubeconfig get events
 * kubectl --kubeconfig=kubeconfig get services
+
+other kube commands
+* kubectl --kubeconfig=kubeconfig logs <POD-NAME>
+* kubectl --kubeconfig=kubeconfig cluster-info
+
+kube delete commands
+* kubectl --kubeconfig=kubeconfig delete deployments  --all
 * kubectl --kubeconfig=kubeconfig delete pods --all
+
+kube create commands
+* kubectl --kubeconfig=kubeconfig create -f ./deployment.yaml
 
 try running nginx:
 * kubectl --kubeconfig=kubeconfig run nginx --image=nginx --port=80
