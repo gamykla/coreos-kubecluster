@@ -52,6 +52,9 @@ kube delete commands
 kube create commands
 * kubectl --kubeconfig=kubeconfig create -f ./deployment.yaml
 
+update 
+* kubectl --kubeconfig=kubeconfig apply -f
+
 try running nginx:
 * kubectl --kubeconfig=kubeconfig run nginx --image=nginx --port=80
 * kubectl --kubeconfig=kubeconfig expose deployment nginx --type="LoadBalancer"
