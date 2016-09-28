@@ -46,6 +46,7 @@ other kube commands
 
 kube delete commands
 * kubectl --kubeconfig=kubeconfig delete deployments  --all
+* kubectl --kubeconfig=kubeconfig delete deployment <name>
 * kubectl --kubeconfig=kubeconfig delete pods --all
 
 kube create commands
