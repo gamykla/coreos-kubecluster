@@ -100,11 +100,12 @@ ip. You can get the controller ip with kube-aws status
 
 Todo
 -----
-* what's the proper way of generating ssl certs for the cluster? 
 * why do all hosts have public iP??
-* what's the best practice for protecting services with TLS
 * how does this scale? How are new worker nodes added?
-* how does kube know to create an externally facing ELB when creating a service?
+
+NOTES
+------
+* If a new image is available in the docker registry, kube isn't necessarily going to pull it! For example, if tag 1.0.0 has been updates, don't expect kube to pull it again when creating the deployment if the 1.0.0 tag is already on the filesystem
 
 References
 ------------
