@@ -46,14 +46,14 @@ other kube commands
 
 kube delete commands
 * kubectl --kubeconfig=kubeconfig delete deployments  --all
-* kubectl --kubeconfig=kubeconfig delete deployment <name>
+* kubectl --kubeconfig=kubeconfig delete deployment $DEPLOYMENT_NAME
 * kubectl --kubeconfig=kubeconfig delete pods --all
 
 kube create commands
 * kubectl --kubeconfig=kubeconfig create -f ./deployment.yaml
 
 perform an update
-* kubectl --kubeconfig=kubeconfig apply -f <yaml file>
+* kubectl --kubeconfig=kubeconfig apply -f $YAML_FILE
 
 try running nginx:
 * kubectl --kubeconfig=kubeconfig run nginx --image=nginx --port=80
