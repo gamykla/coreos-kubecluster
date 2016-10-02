@@ -52,8 +52,8 @@ kube delete commands
 kube create commands
 * kubectl --kubeconfig=kubeconfig create -f ./deployment.yaml
 
-update 
-* kubectl --kubeconfig=kubeconfig apply -f
+perform an update
+* kubectl --kubeconfig=kubeconfig apply -f <yaml file>
 
 try running nginx:
 * kubectl --kubeconfig=kubeconfig run nginx --image=nginx --port=80
