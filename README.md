@@ -79,6 +79,11 @@ cleanup: tearing down your pods + services
 * verify services are gone
  * kubectl --kubeconfig=kubeconfig get services
 
+other
+* get kube system pods:
+ * kubectl --kubeconfig=kubeconfig get pods --namespace=kube-system
+* When getting logs for kube system pod, you must also include --namespace=kube-system
+
 Other tasks
 --------------
 * shut it down
