@@ -26,7 +26,8 @@ kube-aws init \
 * edit cluster.yaml
 * build.sh
 * kube-aws up
- * make sure that your VPC has an internet gateway attached to it
+ * if you provide your own VPC make sure it has an internet gateway attached to it
+ * the Kube VPC is provisioned with AWS Cloud formation. After you run kube-aws up, you can watch its progress in the cloud formation console: https://console.aws.amazon.com/cloudformation/ 
  
 Once you're running
 -------------------
