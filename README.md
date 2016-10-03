@@ -119,3 +119,4 @@ References
 * https://coreos.com/kubernetes/docs/latest/kubernetes-on-aws.html
 * http://kubernetes.io/docs/hellonode/ 
 * kubernetes services: http://kubernetes.io/docs/user-guide/services/#type-nodeport
+* troubleshooting - http://kubernetes.io/docs/user-guide/application-troubleshooting/
