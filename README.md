@@ -31,6 +31,7 @@ kube-aws init \
  
 Once you're running
 -------------------
+* You may want to edit the kubeconfig file to add fully qualified paths to the certificate referencs. This may come in handy!
 * kube-aws status -- get controller IP
 * kubectl --kubeconfig=kubeconfig get nodes
 
