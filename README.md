@@ -7,6 +7,7 @@ preliminary steps
 * install kubernetes
  * add kubectl to your PATH
 * install kube-aws 
+ * https://github.com/coreos/coreos-kubernetes/releases
  * add kube-aws to your PATH
 
 kube cluster setup steps
@@ -105,10 +106,6 @@ ip. You can get the controller ip with kube-aws status
 * special steps must be taken when setting up certs for production deployments
 * a kubernetes config file is written to kubeconfig. It can be used to interact with the cluster like so: kubectl --kubeconfig=kubeconfig get nodes
 
-Todo
------
-* why do all hosts have public iP??
-* how does this scale? How are new worker nodes added?
 
 NOTES
 ------
