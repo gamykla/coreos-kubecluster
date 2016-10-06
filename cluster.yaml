@@ -58,7 +58,7 @@ controllerRootVolumeType: gp2
 workerCount: 2
 
 # Instance type for worker nodes
-workerInstanceType: t2.micro
+workerInstanceType: t2.nano
 
 # Disk size (GiB) for worker nodes
 workerRootVolumeSize: 8
