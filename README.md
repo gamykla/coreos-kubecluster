@@ -35,7 +35,7 @@ Once you're running
 -------------------
 * You may want to edit the kubeconfig file to add fully qualified paths to the certificate referencs. This may come in handy!
 
-Handy commands
+userful commands:
 ```
 # get stuff
 kubectl --kubeconfig=kubeconfig get pods
