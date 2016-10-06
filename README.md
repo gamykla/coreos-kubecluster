@@ -55,41 +55,43 @@ kubectl --kubeconfig=kubeconfig create -f ./deployment.yaml
 kubectl --kubeconfig=kubeconfig apply -f $YAML_FILE
 ```
 
-try running nginx:
-* kubectl --kubeconfig=kubeconfig run nginx --image=nginx --port=80
-* kubectl --kubeconfig=kubeconfig expose deployment nginx --type="LoadBalancer"
-* kubectl --kubeconfig=kubeconfig get services nginx
- * you'll want to get the hostname for the load balancer that was created from the aws console
+an nginx helloworld tutorial:
+```
+kubectl --kubeconfig=kubeconfig run nginx --image=nginx --port=80
+kubectl --kubeconfig=kubeconfig expose deployment nginx --type="LoadBalancer"
+kubectl --kubeconfig=kubeconfig get services nginx  #you'll want to get the hostname for the load balancer that was created from the aws console
 
-add more pod instances:
-* kubectl --kubeconfig=kubeconfig scale deployment nginx --replicas=4
+# add some more instances
+kubectl --kubeconfig=kubeconfig scale deployment nginx --replicas=4
 
-upgrade to a new version of the nginx image:
-* kubectl --kubeconfig=kubeconfig set image deployment/nginx nginx=nginx:1.11-alpine
- * notice the old pods being taken down and new ones being brought up: 
-  * kubectl --kubeconfig=kubeconfig get pods
-* go back to the latest version
- * kubectl --kubeconfig=kubeconfig set image deployment/nginx nginx=nginx:latest
+#upgrade to a new version of the nginx image
+kubectl --kubeconfig=kubeconfig set image deployment/nginx nginx=nginx:1.11-alpine
+# notice the old pods being taken down and new ones being brought up: 
+kubectl --kubeconfig=kubeconfig get pods
+# go back to the latest version
+kubectl --kubeconfig=kubeconfig set image deployment/nginx nginx=nginx:latest
 
-cleanup: tearing down your pods + services
-* delete the deployment (deletes pods) + delete service (deletes lb)
- * kubectl --kubeconfig=kubeconfig kubectl delete service,deployment nginx
-* verify pods are gone
- * kubectl --kubeconfig=kubeconfig get pods
-* verify services are gone
- * kubectl --kubeconfig=kubeconfig get services
+# cleaning up
+kubectl --kubeconfig=kubeconfig kubectl delete service,deployment nginx
+# verify pods are gone
+kubectl --kubeconfig=kubeconfig get pods
+# verify services are gone
+kubectl --kubeconfig=kubeconfig get services
 
-other
-* get kube system pods:
- * kubectl --kubeconfig=kubeconfig get pods --namespace=kube-system
-* When getting logs for kube system pod, you must also include --namespace=kube-system
+# shut it all down with kube-aws
+kube-aws destroy  # deletes the cloudformation stack
+```
 
-Other tasks
---------------
-* shut it down
- * kube-aws destroy
-* backing up the cloudformation stack
- * kube-aws up --export
+misc system stuff:
+```
+# get kube system pods:
+kubectl --kubeconfig=kubeconfig get pods --namespace=kube-system
+# nb: When getting logs for kube system pod, you must also include --namespace=kube-system
+
+# back up your cloudformation stack
+kube-aws up --export
+```
+
 
 notes
 ------
@@ -97,15 +99,9 @@ notes
 ```
 ssh -i MyKey.pem core@Ip
 ```
-* worker nodes scale with ec2 auto scaling rules? (review cloudformation)
-* if you don't want to register the dns name kube.jeliskubezone.com for example, add kube.jeliskubezone.com to /etc/hosts and point it to the controller
+* if you don't want to register the controller dns name kube.jeliskubezone.com for example, add kube.jeliskubezone.com to /etc/hosts and point it to the controller
 ip. You can get the controller ip with kube-aws status
 * special steps must be taken when setting up certs for production deployments
-* a kubernetes config file is written to kubeconfig. It can be used to interact with the cluster like so: kubectl --kubeconfig=kubeconfig get nodes
-
-
-NOTES
-------
 * If a new image is available in the docker registry, kube isn't necessarily going to pull it! For example, if tag 1.0.0 has been updates, don't expect kube to pull it again when creating the deployment if the 1.0.0 tag is already on the filesystem
 
 References
