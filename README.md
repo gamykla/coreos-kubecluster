@@ -1,4 +1,4 @@
-# coreos-kubecluster
+# coreos-kubecluster step by step
 
 How to run kubernetes on core-os instances on AWS.
 
@@ -24,39 +24,36 @@ kube-aws init \
  --key-name=$YOUR_KEYPAIR_NAME \
  --kms-key-arn="$YOUR_KMS_ARN"
 ```
-* edit cluster.yaml
-* build.sh
-* kube-aws up
- * if you provide your own VPC make sure it has an internet gateway attached to it
+* edit cluster.yaml - set config values that suit you. the next steps will validate your config.
+* run build.sh
+ * this step will run validations. 
+* run 'kube-aws up' to start the cluster.
+ * nb: if you provide your own VPC make sure it has an internet gateway attached to it
  * the Kube VPC is provisioned with AWS Cloud formation. After you run kube-aws up, you can watch its progress in the cloud formation console: https://console.aws.amazon.com/cloudformation/ 
  
 Once you're running
 -------------------
 * You may want to edit the kubeconfig file to add fully qualified paths to the certificate referencs. This may come in handy!
-* kube-aws status -- get controller IP
-* kubectl --kubeconfig=kubeconfig get nodes
 
-kube get commands
-* kubectl --kubeconfig=kubeconfig get pods
-* kubectl --kubeconfig=kubeconfig get nodes
-* kubectl --kubeconfig=kubeconfig get deployments
-* kubectl --kubeconfig=kubeconfig get events
-* kubectl --kubeconfig=kubeconfig get services
-
-other kube commands
-* kubectl --kubeconfig=kubeconfig logs <POD-NAME>
-* kubectl --kubeconfig=kubeconfig cluster-info
-
-kube delete commands
-* kubectl --kubeconfig=kubeconfig delete deployments  --all
-* kubectl --kubeconfig=kubeconfig delete deployment $DEPLOYMENT_NAME
-* kubectl --kubeconfig=kubeconfig delete pods --all
-
-kube create commands
-* kubectl --kubeconfig=kubeconfig create -f ./deployment.yaml
-
-perform an update
-* kubectl --kubeconfig=kubeconfig apply -f $YAML_FILE
+Handy commands
+```
+# get stuff
+kubectl --kubeconfig=kubeconfig get pods
+kubectl --kubeconfig=kubeconfig get nodes
+kubectl --kubeconfig=kubeconfig get deployments
+kubectl --kubeconfig=kubeconfig get events
+kubectl --kubeconfig=kubeconfig get services
+kubectl --kubeconfig=kubeconfig logs <POD-NAME>
+kubectl --kubeconfig=kubeconfig cluster-info
+# deleting stuff
+kubectl --kubeconfig=kubeconfig delete deployments  --all
+kubectl --kubeconfig=kubeconfig delete deployment $DEPLOYMENT_NAME
+kubectl --kubeconfig=kubeconfig delete pods --all
+# create something from a descriptor
+kubectl --kubeconfig=kubeconfig create -f ./deployment.yaml
+# update something
+kubectl --kubeconfig=kubeconfig apply -f $YAML_FILE
+```
 
 try running nginx:
 * kubectl --kubeconfig=kubeconfig run nginx --image=nginx --port=80
