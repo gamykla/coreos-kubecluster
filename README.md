@@ -21,8 +21,8 @@ kube-aws init \
  --external-dns-name=my-cluster-endpoint \
  --region=us-west-1 \
  --availability-zone=us-west-1c \
- --key-name=key-pair-name \
- --kms-key-arn="arn:aws:kms:us-west-1:xxxxxxxxxx:key/xxxxxxxxxxxxxxxxxxx"
+ --key-name=$YOUR_KEYPAIR_NAME \
+ --kms-key-arn="$YOUR_KMS_ARN"
 ```
 * edit cluster.yaml
 * build.sh
