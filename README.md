@@ -79,7 +79,8 @@ kubectl --kubeconfig=kubeconfig get pods
 kubectl --kubeconfig=kubeconfig get services
 
 # shut it all down with kube-aws
-kube-aws destroy  # deletes the cloudformation stack
+# nb: be sure to delete your service FIRST! The stack teardown will fail miserably if you still have an ELB associated with your VPC.
+kube-aws destroy  
 ```
 
 misc system stuff:
