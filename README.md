@@ -45,14 +45,21 @@ kubectl --kubeconfig=kubeconfig get events
 kubectl --kubeconfig=kubeconfig get services
 kubectl --kubeconfig=kubeconfig logs <POD-NAME>
 kubectl --kubeconfig=kubeconfig cluster-info
+
 # deleting stuff
 kubectl --kubeconfig=kubeconfig delete deployments  --all
 kubectl --kubeconfig=kubeconfig delete deployment $DEPLOYMENT_NAME
 kubectl --kubeconfig=kubeconfig delete pods --all
+
 # create something from a descriptor
 kubectl --kubeconfig=kubeconfig create -f ./deployment.yaml
+
 # update something
 kubectl --kubeconfig=kubeconfig apply -f $YAML_FILE
+
+# describe things
+kubectl --kubeconfig=kubeconfig describe service $SERVICE_NAME
+kubectl --kubeconfig=kubeconfig describe pod $POD_NAME
 ```
 
 an nginx helloworld tutorial:
