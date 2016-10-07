@@ -60,6 +60,7 @@ kubectl --kubeconfig=kubeconfig apply -f $YAML_FILE
 # describe things
 kubectl --kubeconfig=kubeconfig describe service $SERVICE_NAME
 kubectl --kubeconfig=kubeconfig describe pod $POD_NAME
+kubectl --kubeconfig=kubeconfig describe deployment $DEPLOYMENT_NAME
 ```
 
 an nginx helloworld tutorial:
