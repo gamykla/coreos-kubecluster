@@ -35,7 +35,8 @@ Once you're running
 -------------------
 * You may want to edit the kubeconfig file to add fully qualified paths to the certificate referencs. This may come in handy!
 
-userful commands:
+useful stuff
+----------------
 ```
 # get stuff
 kubectl --kubeconfig=kubeconfig get pods
@@ -63,7 +64,8 @@ kubectl --kubeconfig=kubeconfig describe pod $POD_NAME
 kubectl --kubeconfig=kubeconfig describe deployment $DEPLOYMENT_NAME
 ```
 
-an nginx helloworld tutorial:
+nginx hello-world
+------------------
 ```
 kubectl --kubeconfig=kubeconfig run nginx --image=nginx --port=80
 kubectl --kubeconfig=kubeconfig expose deployment nginx --type="LoadBalancer"
