@@ -6,9 +6,11 @@ preliminary steps: install kubectl and kube-aws
 ------------------
 * install kubernetes
  * add kubectl to your PATH. Download kubernetes, extract kubectl. https://github.com/kubernetes/kubernetes/releases
+ * We're using 1.5.0 https://github.com/kubernetes/kubernetes/releases/tag/v1.5.0
 * install kube-aws 
  * https://github.com/coreos/coreos-kubernetes/releases
  * add kube-aws to your PATH
+ * We're using 0.8.3 https://github.com/coreos/coreos-kubernetes/releases/tag/v0.8.3
 
 kube cluster setup steps
 --------------------------
