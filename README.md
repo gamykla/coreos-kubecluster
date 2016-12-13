@@ -119,6 +119,8 @@ ssh -i MyKey.pem core@Ip
 ip. You can get the controller ip with kube-aws status
 * special steps must be taken when setting up certs for production deployments
 * If a new image is available in the docker registry, kube isn't necessarily going to pull it! For example, if tag 1.0.0 has been updates, don't expect kube to pull it again when creating the deployment if the 1.0.0 tag is already on the filesystem
+* controller node has been know to fail. see the system logs if none of the pods appear to be running with 'journalct'
+ * rebooting the instance has been known to fix this at some times.
 
 References
 ------------
