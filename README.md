@@ -19,7 +19,7 @@ kube cluster setup steps
  * Go to "Encryption keys"
  * Create a key
  * record the ARN 
-* create the kube-aws cluster.yaml configuration file by running kube-aws init 
+* [Step 3] create the kube-aws cluster.yaml configuration file by running kube-aws init 
 ```
 kube-aws init \
  --cluster-name=my-cluster-name \
@@ -29,10 +29,10 @@ kube-aws init \
  --key-name=$YOUR_KEYPAIR_NAME (from step 1 above)  \
  --kms-key-arn="$YOUR_KMS_ARN" (from step 2 above)
 ```
-* edit cluster.yaml - set config values that suit you. the next steps will validate your config.
-* run build.sh
+* [Step 4] edit cluster.yaml - set config values that suit you. the next steps will validate your config.
+* [Step 5] run build.sh
  * this step will run validations. 
-* run 'kube-aws up' to start the cluster.
+* [Step 6] run 'kube-aws up' to start the cluster.
  * nb: if you provide your own VPC make sure it has an internet gateway attached to it
  * the Kube VPC is provisioned with AWS Cloud formation. After you run kube-aws up, you can watch its progress in the cloud formation console: https://console.aws.amazon.com/cloudformation/ 
  
