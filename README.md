@@ -15,6 +15,7 @@ preliminary steps: install kubectl and kube-aws
 kube cluster setup steps
 --------------------------
 * find your aws keypair or create one. https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#KeyPairs:sort=keyName You will use these keys to access core-os instances making up your cluster. login with user core.
+ * install your credentials in ~/.aws/configuration ~/.aws/credentials
 * create KMS keys. get the arn - https://console.aws.amazon.com/iam/home?region=us-east-1#encryptionKeys/us-east-1 
 * create the kube-aws cluster.yaml configuration file by running kube-aws init 
 ```
