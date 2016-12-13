@@ -14,9 +14,8 @@ preliminary steps: install kubectl and kube-aws
 
 kube cluster setup steps
 --------------------------
-* find your aws keypair or create one. https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#KeyPairs:sort=keyName You will use these keys to access core-os instances making up your cluster. login with user core.
- * install your credentials in ~/.aws/configuration ~/.aws/credentials
-* create KMS keys. get the arn - https://console.aws.amazon.com/iam/home?region=us-east-1#encryptionKeys/us-east-1 
+* [Step 1: create keypair] find your aws keypair or create one. https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#KeyPairs:sort=keyName You will use these keys to access core-os instances making up your cluster. login with user core.
+* [Step 2: create encrpytion keys] create KMS keys. get the arn - https://console.aws.amazon.com/iam/home?region=us-east-1#encryptionKeys/us-east-1 
  * Go to "Encryption keys"
  * Create a key
  * record the ARN 
@@ -24,11 +23,11 @@ kube cluster setup steps
 ```
 kube-aws init \
  --cluster-name=my-cluster-name \
- --external-dns-name=my-cluster-endpoint \
+ --external-dns-name=kube.myhostname.com \
  --region=us-west-1 \
  --availability-zone=us-west-1c \
- --key-name=$YOUR_KEYPAIR_NAME \
- --kms-key-arn="$YOUR_KMS_ARN"
+ --key-name=$YOUR_KEYPAIR_NAME (from step 1 above)  \
+ --kms-key-arn="$YOUR_KMS_ARN" (from step 2 above)
 ```
 * edit cluster.yaml - set config values that suit you. the next steps will validate your config.
 * run build.sh
