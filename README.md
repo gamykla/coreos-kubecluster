@@ -63,6 +63,9 @@ kubectl --kubeconfig=kubeconfig create -f ./deployment.yaml
 # update something
 kubectl --kubeconfig=kubeconfig apply -f $YAML_FILE
 
+# scale a deployment
+kubectl scale deployment <deployment-id> --replicas=4
+
 # describe things
 kubectl --kubeconfig=kubeconfig describe service $SERVICE_NAME
 kubectl --kubeconfig=kubeconfig describe pod $POD_NAME
