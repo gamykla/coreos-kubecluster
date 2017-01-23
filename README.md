@@ -68,6 +68,9 @@ kubectl --kubeconfig=kubeconfig describe service $SERVICE_NAME
 kubectl --kubeconfig=kubeconfig describe pod $POD_NAME
 kubectl --kubeconfig=kubeconfig describe deployment $DEPLOYMENT_NAME
 kubectl describe pods
+
+# executing commands on pods
+kubectl exec <pod-id> -- printenv | grep SERVICE
 ```
 
 nginx hello-world
