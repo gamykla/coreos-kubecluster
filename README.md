@@ -76,6 +76,9 @@ kubectl describe pods
 kubectl exec <pod-id> -- printenv | grep SERVICE
 ```
 
+
+Cheat Sheet: https://kubernetes.io/docs/user-guide/kubectl-cheatsheet/ 
+
 nginx hello-world
 ------------------
 ```
